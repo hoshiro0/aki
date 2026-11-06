@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080810">
+  <title>my dearest, aki</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<main class="phone">
+  <div class="screen">
+
+    <div class="wallpaper lock-wallpaper"></div>
+    <div class="wallpaper home-wallpaper"></div>
+    <div class="dynamic-island"></div>
+
+    <!-- LOCK SCREEN -->
+    <section id="lockScreen" class="lock-screen">
+      <div class="lock-date" id="lockDate"></div>
+      <div class="lock-time" id="lockTime">09:22</div>
+
+      <div class="lock-bottom">
+        <button onclick="alert('Flashlight activated!')">▰</button>
+        <button onclick="openApp('camera')">◉</button>
+      </div>
+
+      <div class="swipe-text" onclick="showPasscode()">
+        Swipe up to unlock
+      </div>
+      <div class="home-indicator" onclick="showPasscode()"></div>
+    </section>
+
+    <!-- PASSCODE -->
+    <section id="passcodeScreen" class="passcode hidden">
+      <h2>Enter Passcode</h2>
+      <div class="dots" id="dots">
+        <i></i><i></i><i></i><i></i>
+      </div>
+
+      <div class="keypad">
+        <button onclick="pressKey('1')">1</button>
+        <button onclick="pressKey('2')">2<small>ABC</small></button>
+        <button onclick="pressKey('3')">3<small>DEF</small></button>
+        <button onclick="pressKey('4')">4<small>GHI</small></button>
+        <button onclick="pressKey('5')">5<small>JKL</small></button>
+        <button onclick="pressKey('6')">6<small>MNO</small></button>
+        <button onclick="pressKey('7')">7<small>PQRS</small></button>
+        <button onclick="pressKey('8')">8<small>TUV</small></button>
+        <button onclick="pressKey('9')">9<small>WXYZ</small></button>
+        <span></span>
+        <button onclick="pressKey('0')">0</button>
+        <button class="delete" onclick="deleteKey()">⌫</button>
+      </div>
+
+      <p id="errorMessage"></p>
+      <button class="cancel" onclick="showLock()">Cancel</button>
+    </section>
+
+    <!-- HOME SCREEN -->
+    <section id="homeScreen" class="home hidden">
+
+      <div class="status-bar">
+        <span id="homeTime">09:22</span>
+        <span>▮▮ 4G ▰</span>
+      </div>
+
+      <div class="battery-widget">
+        <div>▯<small>100%</small></div>
+        <div>⌁<small>100%</small></div>
+        <div>▰<small>100%</small></div>
+        <label>Batteries</label>
+      </div>
+
+      <div class="app-grid">
+
+        <button class="reminder-widget">
+          <div class="reminder-title">2 <small>Today</small></div>
+          <p>○ Finish my plans</p>
+          <p>○ Don't forget</p>
+          <label>Reminders</label>
+        </button>
+
+        <button class="app" onclick="openApp('notes')">
+          <span class="icon notes-icon">▤</span>
+          <small>Notes</small>
+        </button>
+
+        <button class="app" onclick="openApp('calendar')">
+          <span class="icon calendar-icon">6</span>
+          <small>Calendar</small>
+        </button>
+
+        <button class="app" onclick="openApp('clock')">
+          <span class="icon clock-icon">◷</span>
+          <small>Clock</small>
+        </button>
+
+        <button class="app" onclick="openApp('photos')">
+          <span class="icon photos-icon">✿</span>
+          <small>Photos</small>
+        </button>
+
+        <button class="app" onclick="openApp('netflix')">
+          <span class="icon netflix-icon">N</span>
+          <small>Netflix</small>
+        </button>
+
+        <button class="app" onclick="openApp('letterboxd')">
+          <span class="icon letter-icon">▣</span>
+          <small>Letterboxd</small>
+        </button>
+
+        <button class="app" onclick="openApp('codm')">
+          <span class="icon game-icon">COD</span>
+          <small>CODM</small>
+        </button>
+
+        <button class="app" onclick="openApp('mlbb')">
+          <span class="icon game-icon">ML</span>
+          <small>MLBB</small>
+        </button>
+
+        <button class="app" onclick="openApp('roblox')">
+          <span class="icon roblox-icon">◇</span>
+          <small>Roblox</small>
+        </button>
+
+      </div>
+
+      <div class="dock">
+        <button onclick="openApp('instagram')">
+          <span class="icon instagram-icon">◎</span>
+        </button>
+        <button onclick="openApp('phone')">
+          <span class="icon phone-icon">☎</span>
+        </button>
+        <button onclick="openApp('messages')">
+          <span class="icon messages-icon">●</span>
+        </button>
+        <button onclick="openApp('spotify')">
+          <span class="icon spotify-icon">≋</span>
+        </button>
+      </div>
+
+      <div class="home-indicator"></div>
+    </section>
+
+    <!-- APPLICATIONS -->
+    <section id="appScreen" class="app-screen hidden">
+      <header class="app-header">
+        <button onclick="goHome()">‹</button>
+        <strong id="appTitle">App</strong>
+        <button onclick="goHome()">•••</button>
+      </header>
+
+      <div id="appContent" class="app-content"></div>
+
+      <div class="app-home-indicator" onclick="goHome()"></div>
+    </section>
+
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
